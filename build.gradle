@@ -1,6 +1,17 @@
 group 'net.crew4ok'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
+
+apply plugin: 'spring-boot'
+
 task wrapper(type: Wrapper) {
   gradleVersion = '2.11'
   distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
@@ -11,7 +22,7 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
